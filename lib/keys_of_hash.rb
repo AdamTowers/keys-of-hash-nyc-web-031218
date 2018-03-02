@@ -1,5 +1,18 @@
+require "pry"
+
 class Hash
-  def keys_of(arguments)
-    # code goes here
+  #think hash.keys_of do |*arguments|
+  def keys_of(*arguments)
+
+    array = []
+
+
+    self.collect do |key, value|
+      if arguments.include?(value)
+        array << key
+      end
+    end
+    array
   end
+
 end
